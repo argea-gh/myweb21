@@ -1406,7 +1406,18 @@ body {
   align-items: center;
   border-radius: 50%;
 }
+/* TOMBOL PILIH & DETAIL PROD */
+.card-actions {
+  display: flex;
+  gap: 8px;
+  margin-top: 12px;
+}
 
+.card-actions .btn {
+  flex: 1;
+  font-size: 0.9rem;
+  padding: 8px 10px;
+}
 /* ────────────────────────────────────────── */
 /* MODAL INFO DETAILS */
 /* ────────────────────────────────────────── */
