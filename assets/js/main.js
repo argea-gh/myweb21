@@ -111,13 +111,31 @@ function renderProducts(category = 'all') {
   });
 
   // Event: Pilih Produk → modal
-  document.querySelectorAll('.btn-add').forEach(btn => {
-    btn.addEventListener('click', (e) => {
-      const id = e.target.dataset.id;
-      const product = productList.find(p => p.id === id);
-      if (product) openProductModal(product);
-    });
+// ✅ Tambah ke keranjang
+document.querySelectorAll('.btn-cart').forEach(btn => {
+  btn.addEventListener('click', (e) => {
+    const id = e.target.dataset.id;
+    const productList = JSON.parse(localStorage.getItem('herbaprimaProducts')) || products;
+    const product = productList.find(p => p.id === id);
+    if (product) {
+      addToCart(product); // pastikan fungsi ini ada
+      // Opsional: beri feedback visual
+      const originalText = btn.textContent;
+      btn.textContent = '✅ Ditambahkan!';
+      setTimeout(() => btn.textContent = originalText, 1500);
+    }
   });
+});
+
+// ✅ Buka modal detail
+document.querySelectorAll('.btn-detail').forEach(btn => {
+  btn.addEventListener('click', (e) => {
+    const id = e.target.dataset.id;
+    const productList = JSON.parse(localStorage.getItem('herbaprimaProducts')) || products;
+    const product = productList.find(p => p.id === id);
+    if (product) openProductModal(product);
+  });
+});
 
   // Event: Klik gambar → modal
   document.querySelectorAll('.product-card img').forEach(img => {
