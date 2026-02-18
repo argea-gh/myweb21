@@ -1422,7 +1422,7 @@ body {
   font-size: 0.9rem;
   padding: 8px 10px;
   border: none;
-  border-radius: 6px;
+  border-radius: 15px;
   cursor: pointer;
   transition: var(--transition);
   font-weight: 600;
