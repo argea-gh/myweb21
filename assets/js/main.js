@@ -366,7 +366,7 @@ function updateCartDisplay(cart) {
 
   // Update tampilan keranjang
   if (cart.length === 0) {
-    cartItems.innerHTML = '<p style="text-align:center; color:#6b7280;">Silahkan Pilih Produk</p>';
+    cartItems.innerHTML = '<p style="text-align:center; color:#6b7280;">Anda Belum Memilih Produk</p>';
   } else {
     cartItems.innerHTML = cart.map(item => {
       const itemTotal = item.price * item.quantity;
