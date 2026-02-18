@@ -98,13 +98,9 @@ function renderProducts(category = 'all') {
         <h4>${product.name}</h4>
         <div class="price">${priceFormatted}</div>
         <div class="card-actions">
-  <button class="btn btn-outline btn-cart" data-id="${product.id}">
-    Pilih Produk
-  </button>
-  <button class="btn btn-outline btn-detail" data-id="${product.id}">
-    Detail Produk
-  </button>
-</div>
+          <button class="btn-cart" data-id="${product.id}">Pilih</button>
+          <button class="btn-detail" data-id="${product.id}">Detail</button>
+        </div>
       </div>
     `;
     grid.appendChild(card);
